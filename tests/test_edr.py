@@ -128,7 +128,7 @@ class TestEdrToDf(object):
         """
         content = edr.df.iloc[:, 1:].values
         print(edr.xvgdata - content)
-        assert numpy.allclose(edr.xvgdata, content, atol=edr.xvgprec/2)
+        assert numpy.allclose(edr.xvgdata, content, atol=edr.xvgprec)
 
     def test_verbosity(self):
         """
@@ -139,7 +139,7 @@ class TestEdrToDf(object):
         ref_content, _, prec = read_xvg(EDR_XVG)
         content = df.values
         print(ref_content - content)
-        assert numpy.allclose(ref_content, content, atol=prec/2)
+        assert numpy.allclose(ref_content, content, atol=prec)
 
     def test_progress(self):
         """
@@ -232,7 +232,7 @@ def redirect_stderr(target):
     """
     Redirect sys.stderr to an other object.
 
-    This function is aimed to be used as a contaxt manager. It is useful
+    This function is aimed to be used as a context manager. It is useful
     especially to redirect stderr to stdout as stdout get captured by nose
     while stderr is not. stderr can also get redirected to any other object
     that may act on it, such as a StringIO to inspect its content.
