@@ -56,6 +56,18 @@ EDR_DOUBLE_XVG = os.path.join(DATA_DIR, 'double.xvg')
 EDR_BLOCKS = os.path.join(DATA_DIR, 'blocks.edr')
 EDR_BLOCKS_XVG = os.path.join(DATA_DIR, 'blocks.xvg')
 
+# Testfiles for file version 1 with single precision
+# See GROMACS regressiontests `Initial revision` (96c57f0d)
+# http://redmine.gromacs.org/projects/regressiontests
+EDR_V1 = os.path.join(DATA_DIR, '1.edr')
+EDR_V1_XVG = os.path.join(DATA_DIR, '1.xvg')
+
+# Testfiles for file version 1 with double precision
+# See GROMACS regressiontests `Initial revision` (96c57f0d)
+# http://redmine.gromacs.org/projects/regressiontests
+EDR_V1_DOUBLE = os.path.join(DATA_DIR, '1_d.edr')
+EDR_V1_DOUBLE_XVG = os.path.join(DATA_DIR, '1_d.xvg')
+
 EDR_Data = namedtuple('EDR_Data', ['df', 'xvgdata', 'xvgtime', 'xvgnames',
                                    'xvgprec', 'edrfile', 'xvgfile'])
 
@@ -64,6 +76,8 @@ EDR_Data = namedtuple('EDR_Data', ['df', 'xvgdata', 'xvgtime', 'xvgnames',
                         (EDR_IRREGULAR, EDR_IRREGULAR_XVG),
                         (EDR_DOUBLE, EDR_DOUBLE_XVG),
                         (EDR_BLOCKS, EDR_BLOCKS_XVG),
+                        (EDR_V1, EDR_V1_XVG),
+                        (EDR_V1_DOUBLE, EDR_V1_DOUBLE_XVG),
                         (Path(EDR), EDR_XVG),
                        ])
 def edr(request):
